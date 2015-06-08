@@ -7,6 +7,7 @@ output:
     keep_md: true
 ---
 
+# Reproducible Research: Peer Assessment 1
 
 ## Loading and preprocessing the data
 
@@ -34,6 +35,7 @@ hist(daily.data, 9, col = "slateblue", main = "Total steps per day")
 m <- mean(daily.data)
 med <- median(daily.data)
 ```
+
 The mean and median number of steps in the imputed data are   9354.2 and   10395 respectively.
 
 ## What is the average daily activity pattern?
@@ -57,6 +59,7 @@ plot(seq(0, 1435, 5)/60, timed.data, type = "l", xaxp = c(0, 24, 6),
 busy.bee <- sub("(..)$", ":\\1",
                 names(timed.data[timed.data == max(timed.data)]))
 ```
+
 The time at which most steps were taken is 8:35.
 
 ## Imputing missing values
@@ -99,6 +102,7 @@ hist(daily.data, 9, col = "slateblue",
 m <- mean(daily.data)
 med <- median(daily.data)
 ```
+
 The mean and median number of steps in the imputed data are  10766.2 and  10766.2 respectively.
 
 Imputation pushes up the mean and median number of steps per day. There were no data recorded on 8 whole days. In the unimputed data, each of these contributes zero steps to the mean, whereas in the imputed data they each contribute the mean number of steps (10766.2). The revised median also falls within the set of 8 days with 10766.2 steps imputed to them.
@@ -128,4 +132,5 @@ xyplot(steps ~ time | weekend, data = timed.data, layout = c(1,2),
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+
 The activity pattern differs notably between the weekend and weekdays: the anonymous subject's level of activity is higher at the weekend but is spread throughout the day, whereas there is a clear peak in their  activity around 8.30am during the week. The subject also gets up and goes to bed a bit later at the weekend.
